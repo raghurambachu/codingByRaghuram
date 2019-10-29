@@ -1,0 +1,75 @@
+.box{
+    height:50px;
+    width:50px;
+    background:orangered;
+    padding:5px;
+    border: 2px solid black;
+    
+  }
+  
+  .visible{
+    visibility: collapse;
+  }
+  
+  .darkened{
+    border: 5px solid black;
+    background: #ffdbac;
+  }
+  
+  .green{
+    background:lightgreen;
+  }
+  
+  .blue{
+    background:blue;
+  }
+  
+  .yellow{
+    background: yellow;
+  }
+  
+  .brown{
+    background: #8d5524;
+  }
+  
+  .pink{
+    background:#dd304e;
+  }
+  
+  .purple{
+    background: purple;
+  }
+  
+  .orange{
+    background:orange;
+  }
+  
+  
+  
+  .silicon{
+    background: green;
+  }
+  
+  .aligning{
+    margin:0% auto;
+    
+    
+  }
+  
+  .spacing{
+    border-collapse: collapse;
+  }
+  
+  .nogap{
+    background: green;
+    height:40px;
+    width: 40px;
+    border:1px solid black;
+    text-align:center;
+    
+  }
+  
+  .light{
+    background:lightgreen;
+    text-align:center;
+  }
