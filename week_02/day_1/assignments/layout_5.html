@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title>Layout</title>
+    <style>
+        body{
+            margin: 20px 20px;
+        }
+
+        .sameline{
+            display: inline-block;
+        }
+
+       .rectangle{
+           width: 98%;
+           height: 150px;
+           background-color:orangered;
+       }
+
+       .line{
+           width: 98%;
+           height: 50px;
+          
+       }
+
+       #smallwidth{
+            width: 30%;
+            height: 700px;
+            background-color: yellowgreen;
+       }
+
+       #largewidth{
+            width: 65%;
+            height: 700px;
+            background-color: green;
+       }
+
+       .gap{
+           height: 700px;
+           width: 2.5%;
+       }
+    
+    </style>
+</head>
+<body>
+
+ <div class="rectangle"></div>
+ <div class="line"></div>
+ <div >
+     <div id="smallwidth" class="sameline"></div>
+     <div class="sameline gap"></div>
+     <div id="largewidth" class="sameline"></div>
+ </div>
+    
+    
+</body>
+</html>
