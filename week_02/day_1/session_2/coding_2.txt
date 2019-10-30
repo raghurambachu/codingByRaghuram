@@ -1,0 +1,169 @@
+FSD.CSS.3.1
+<div>MASAI</div>
+Fill the below property values for the div
+
+Color
+white  
+Height
+100px
+
+FSD.CSS.3.2
+<div style="height:50px;">MASAI</div>
+Fill the below property values for the div
+
+Width
+100px
+Height
+50px
+Padding
+4px
+
+FSD.CSS.3.3
+<div class="class1">MASAI</div>
+Width
+100px
+Height
+100px
+Padding-Left
+4px
+Margin-Right
+6px
+Font-Size
+16px
+Color
+black
+
+FSD.CSS.3.4
+<div id="id2">MASAI</div>
+Color
+white
+Background Color
+red
+Padding-Bottom
+4px
+Margin-Top
+10px
+Font-Size
+20px
+Height
+100px
+
+
+FSD.CSS.3.5
+<div class="class1 class4" style="color:violet">MASAI</div>
+Width
+100px
+Background Color
+red
+Padding-Bottom
+4px
+Margin-Right
+6px
+Font-Size
+11px
+Color
+
+FSD.CSS.3.6
+<div class="class5 class3" id="id1">MASAI</div>
+Width
+100px
+Color
+red
+Padding-Right
+20px
+Margin-Left
+15px
+Font-Size
+12px
+Background Color
+black
+
+FSD.CSS.3.7
+<div class="class2" id="id2">MASAI</div>
+Width
+75px
+Height
+50px
+Padding-Top
+4px
+Margin-Bottom
+10px
+Font-Size
+20px
+Color
+black
+ 
+FSD.CSS.3.8
+<div class="class4 class2 class6" style="font-size:20px">MASAI</div>
+Width
+100px
+Height
+50px
+Padding-Left
+6px
+Margin-Right
+6px
+Font-Size
+20px
+Color
+orange
+
+FSD.CSS.3.9
+<div class="class5 class3" id="id2">MASAI</div>
+Width
+75px
+Height
+200px
+Background Color
+red
+Color
+red
+Font-Size
+20px
+
+FSD.CSS.3.10
+<div class="class2 class4 class5" id="id3" style="margin-left:22px">MASAI</div>
+Width
+150px
+Height
+100px
+Padding-Top
+4px
+Margin-Left
+22px
+Font-Size
+14px
+Color
+blue
+
+
+FSD.CSS.3.11
+<div class="class5 class3" id="id3" style="color:orange; font-size:28px; margin:20px">MASAI</div>
+Background Color
+black
+Height
+50px
+Margin-Left
+20px
+Padding-Right
+20px
+Font-Size
+28px
+Color
+orange
+
+FSD.CSS.3.12
+<div id="id2">MASAI</div>
+Width
+75px
+Height
+100px
+Background Color
+red
+Margin-Right
+20px
+Font-Size
+20px
+Color
+white
+
