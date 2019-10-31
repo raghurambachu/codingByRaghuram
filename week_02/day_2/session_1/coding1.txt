@@ -1,0 +1,328 @@
+The CSS for each problem is mentioned above the HTML Code
+
+FSD.CSS.4.1
+p {
+    font-size: 16px;
+    color: green;
+}
+div {
+    font-size: 20px;
+}
+div, p {
+    color: red;
+}
+<div id="id1">
+	First DIV
+</div>
+<p id="id2">
+	First P
+</p>
+Fill the below property values for the div having id1
+
+Color
+red
+Font Size
+20px
+
+Fill the below property values for the p having id2
+
+color
+red
+Font Size
+16px
+
+FSD.CSS.4.2
+div.class1 {
+    color: red;
+}
+p.class1 {
+    color: green;
+}
+p.class2 {
+    font-size: 10px;
+}
+div.class2 {
+    font-size: 12px;
+}
+<div id="id1" class="class1">
+    First DIV
+</div>
+<div id="id2" class="class2">
+    Second DIV
+</div>
+<p id="id3" class="class1">
+    First Para
+</p>
+<p id="id4" class="class2">
+    Second Para
+</p>
+Fill the below property values for the div having id1
+
+Color
+red
+
+Fill the below property values for the div having id2
+
+Font Size
+12px
+
+Fill the below property values for the p having id3
+
+Color
+green
+
+Fill the below property values for the p having id4
+
+Font Size
+10px
+
+FSD.CSS.4.3
+p + div {
+    background-color: red;
+}
+.class1 + p {
+    background-color: green;
+}
+<div id="id1" class="class1">
+	<p id="id2"></p>
+	<div id="id3"></div>
+</div>
+
+<p id="id4"></p>
+
+<div id="id5"></div>
+
+<div id="id6" class="class1"></div>
+
+<p id="id7"></p>
+
+<p id="id8" class="class1"></p>
+
+<p id="id9"></p>
+
+<div id="id10"></div>
+
+<div id="id11">
+	<p id="id12" class="class1"></p>
+	<p id="id13"></p>
+	<p id="id14"></p>
+	<div id="id15" class="class1"></div>
+	<p id="id16"></p>
+	<p id="id17"></p>
+</div>
+
+<p id="id18" class="class1"></p>
+<p id="id19"></p>
+<div id="id20"></div>
+All the div tags whose background color will be red
+
+IDs
+#id5
+#id10
+#id15
+#id20
+
+All the p tags whose background color will be green
+#id7
+#id9
+#id13
+#id16
+#id19
+IDs
+
+
+
+
+FSD.CSS.4.4
+div ~ p {
+    background-color: red;
+}
+.class1 ~ div {
+    background-color: green;
+}
+<div id="id1" class="class1">
+	<p id="id2"></p>
+	<div id="id3"></div>
+</div>
+
+<p id="id4"></p>
+
+<div id="id5"></div>
+
+<div id="id6" class="class1"></div>
+
+<p id="id7"></p>
+
+<p id="id8" class="class1"></p>
+
+<p id="id9"></p>
+
+<div id="id10"></div>
+
+<div id="id11">
+	<p id="id12" class="class1"></p>
+	<p id="id13"></p>
+	<p id="id14"></p>
+	<div id="id15" class="class1"></div>
+	<p id="id16"></p>
+	<p id="id17"></p>
+</div>
+
+<p id="id18" class="class1"></p>
+<p id="id19"></p>
+<div id="id20"></div>
+All the p tags whose background color will be red
+
+IDs
+#id4
+#id7
+#id8
+#id9
+#id16
+#id17
+#id18
+#id19
+
+All the div tags whose background color will be green
+
+IDs
+#id5
+#id10
+#id11
+#id15
+#id20
+
+FSD.CSS.4.5
+div > p {
+    background-color: red;
+}
+.class1 > div {
+    background-color: green;
+}
+<div id="id1" class="class1">
+	<p id="id2"></p>
+	<div id="id3"></div>
+</div>
+
+<p id="id4"></p>
+
+<div id="id5"></div>
+
+<div id="id6" class="class1"></div>
+
+<p id="id7"></p>
+
+<p id="id8" class="class1"></p>
+
+<p id="id9"></p>
+
+<div id="id10"></div>
+
+<div id="id11">
+	<p id="id12" class="class1"></p>
+	<p id="id13"></p>
+	<p id="id14"></p>
+	<div id="id15" class="class1">
+        <div id="id16"></div>
+    </div>
+	<p id="id17"></p>
+</div>
+
+<p id="id18" class="class1"></p>
+<p id="id19"></p>
+<div id="id20">
+    <p id="id21"></p>
+</div>
+All the p tags whose background color will be red
+
+IDs
+#id2 
+#id12
+#id13
+#id14
+#id17
+#id21
+
+All the div tags whose background color will be green
+
+IDs
+#id3
+#id16 
+
+FSD.CSS.4.6
+.class1 p {
+    background-color: green;
+}
+
+#id20 p {
+    background-color: red;
+}
+<div id="id1" class="class1">
+	<p id="id2"></p>
+	<div id="id3"></div>
+</div>
+
+<p id="id4"></p>
+
+<div id="id5"></div>
+
+<div id="id6" class="class1">
+    <p id="id7"></p>
+    <p id="id8" class="class1"></p>
+    <p id="id9"></p>
+</div>
+
+<div id="id10"></div>
+
+<div id="id11">
+	<p id="id12" class="class1"></p>
+	<p id="id13"></p>
+	<p id="id14"></p>
+	<div id="id15" class="class1">
+        <p id="id16"></p>
+    </div>
+	<p id="id17"></p>
+</div>
+
+<p id="id18" class="class1"></p>
+<p id="id19"></p>
+<div id="id20">
+    <p id="id21"></p>
+    <div id="id22">
+        <p id="id23"></p>
+        <div id="id24">
+            <p id="id25"></p>
+            <div id="id26">
+                <p id="id27"></p>
+                <div id="id28">
+                    <p id="id29"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p id="id30"></p>
+All the p tags whose background color will be red
+
+IDs
+#id21
+#id23
+#id25
+#id27
+#id29
+
+All the p tags whose background color will be green
+
+IDs
+#id2
+#id7
+#id8
+#id9
+#id16
+
+FSD.CSS.4.7
+You can't use any style tags for any of the html tags and also can't use tables to achieve the layout. Apart from classes and id's you are expected to use altest two of the CSS combinators (+ ~ > space)
+
+Create a file called periodic_table.html
+Write html code so that it looks like the given image https://raw.githubusercontent.com/masai-school/full-stack-dev-1910/master/week_01/day_5/resources/periodic_table.jpg
+Submission folder ~/repos/cohort_3/submissions/<your_folder>/week_02/day_3/session_1
