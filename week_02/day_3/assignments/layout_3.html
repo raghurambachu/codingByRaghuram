@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Layout Small Medium & Big
+    </title>
+    <style>
+
+
+           
+
+            .container{
+            display: grid;
+            grid-gap: 30px;
+            grid-template-rows: 150px 240px 240px 240px;
+            grid-template-columns: auto auto auto auto;
+            }
+
+            #item1{
+                grid-area: 1 / 1 / 1 / span 4;
+                background-color: yellow;
+            }
+
+            #item2{
+                grid-area: 2 / 1 / span 3 / span 3;
+                background-color: orangered;
+            }
+
+            #item3{
+                grid-area: 2 / 4 / 2 / 4;
+                background-color: greenyellow;
+            }
+
+            #item4{
+                grid-area: 3 / 4 / 3 / 4;
+                background-color: greenyellow;
+            }
+
+            #item5{
+                grid-area: 4 / 4 / 4 / 4;
+                background-color: greenyellow;
+            }
+
+            h2,h3{
+                    padding-left: 30px;
+                }
+
+
+            .columns{
+                display: none;
+            }
+
+               
+
+
+            
+            
+           
+
+                @media only screen and (  max-width: 992px) {
+
+                    .container{
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    #item1{
+                        flex: auto;
+                        background-color: yellow;
+                        height: 150px;
+                    }
+
+                    #item2{
+                        flex: auto;
+                        background-color: orangered;
+                        height:500px;
+                        margin-top:30px;
+                    }
+
+                    .row{
+                        display: none;
+                        background-color: greenyellow;
+                        height:200px;
+                        width: 250px;
+                        margin-top: 30px;
+                        margin-right: 10px;
+                        
+                        
+                    }
+
+                    .columns{
+                        display: flex;
+                        flex-direction: row;
+                    }
+
+                    #item6, #item7,#item8{
+                        background-color: greenyellow;
+                        height: 200px;
+                        width: 320px;
+                        margin-top: 20px;
+                        margin-left: 10px;
+                    }
+
+
+
+                  
+                } 
+
+                @media only screen and (  max-width: 600px){
+                    .columns{
+                        display: none;
+                    }
+
+                    .row{
+                        display:flex;
+                        flex-direction: column;
+                        flex: auto;
+                    }
+
+                    #item3,#item4,#item5{
+                        width:100%;
+                        
+                    }
+                }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="item1"><h2>Navigation</h2></div>
+        <div id="item2"><h3>LEFT BOX</h3></div>
+        <div class="row" id="item3"><h3>RIGHT BOX 1</h3></div>
+        <div class="row" id="item4"><h3>RIGHT BOX 2</h3></div>
+        <div class="row" id="item5"><h3>RIGHT BOX 3</h3></div>
+
+        <div class="columns">
+                <div id="item6" ><h3>RIGHT BOX 1</h3></div>
+                <div id="item7"><h3>RIGHT BOX 2</h3></div>
+                <div id="item8" ><h3>RIGHT BOX 3</h3></div>
+        </div>
+         
+
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+            Grid Flex Periodic Table
+        </title>
+        <style>
+
+            .gridcontainer{
+                display:grid;
+                grid-gap :10px;
+                grid-template-rows: 60px 60px 60px;
+                grid-template-columns: repeat(18,60px);
+                background: white;
+                margin: 20px 20px;
+            }
+
+            #sq1{
+                grid-row: 1;
+                grid-column: 1;
+                background:#AA0100;
+
+            }
+
+            #sq2{
+                grid-row: 1;
+                grid-column: 18;
+                background:#FFC40B;
+
+            }
+            #sq3{
+                grid-row: 2;
+                grid-column: 1;
+                background:#8AA022;
+
+            }
+            #sq4{
+                grid-row: 2;
+                grid-column: 2;
+                background:#F65E49;
+
+            }
+            #sq5{
+                grid-row: 2;
+                grid-column: 13;
+                background:#B5008E;
+
+            }
+            #sq6{
+                grid-row: 2;
+                grid-column: 14;
+                background:#55A134;
+
+            }
+            #sq7{
+                grid-row: 2;
+                grid-column: 15;
+                background:#55A134;
+
+            }
+            #sq8{
+                grid-row: 2;
+                grid-column: 16;
+                background:#55A134;
+
+            }
+            #sq9{
+                grid-row: 2;
+                grid-column: 17;
+                background:#F40563;
+
+            }
+            #sq10{
+                grid-row: 2;
+                grid-column: 18;
+                background:#FECC08;
+
+            }
+            #sq11{
+                grid-row: 3;
+                grid-column: 1;
+                background:#8AA022;
+
+            }
+            #sq12{
+                grid-row: 3;
+                grid-column: 2;
+                background:#F65E49;
+
+            }
+            #sq13{
+                grid-row: 3;
+                grid-column: 13;
+                background:#FE6502;
+
+            }
+            #sq14{
+                grid-row: 3;
+                grid-column: 14;
+                background:#B5008E;
+
+            }
+            #sq15{
+                grid-row: 3;
+                grid-column: 15;
+                background:#55A134;
+
+            }
+            #sq16{
+                grid-row: 3;
+                grid-column: 16;
+                background:#55A134;
+
+            }
+            #sq17{
+                grid-row: 3;
+                grid-column: 17;
+                background:#F40563;
+
+            }
+            #sq18{
+                grid-row: 3;
+                grid-column: 18;
+                background:#FECC08;
+
+            }
+
+            .flexcontainer{
+                display: flex;
+                margin: 0 15px;
+                
+
+            }
+
+            .square{
+                height: 60px;
+                width: 60px;
+                background-color: #0002F9;
+                margin: 5px;
+            }
+
+            .fourthline{
+                margin-top: -15px;
+            }
+
+            
+            .black{
+                background: black;
+            }
+
+            .gridcontainer > div{
+                border: 1.5px solid black;
+            }
+
+            .flexcontainer > div{
+                border: 0.050px solid black ;
+            }
+
+            .white{
+                background: white;
+                border: 0.050px solid white !important;
+            }
+
+
+
+            .green{
+                background-color:#8BA526  ;
+            }
+
+            .red{
+                background-color:#FA5854 ;
+            }
+
+            .orange{
+                background-color:#FF6208 ;
+            }
+
+            .purple{
+                background-color: #B5008E;
+            }
+
+            .brown{
+                background-color:  #715161;
+            }
+
+            .yellow{
+                background-color: #FBCF00 ;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <div class="firstthreelines gridcontainer">
+            <div id="sq1"></div>
+            <div id="sq2"></div>
+            <div id="sq3"></div>
+            <div id="sq4"></div>
+            <div id="sq5"></div>
+            <div id="sq6"></div>
+            <div id="sq7"></div>
+            <div id="sq8"></div>
+            <div id="sq9"></div>
+            <div id="sq10"></div>
+            <div id="sq11"></div>
+            <div id="sq12"></div>
+            <div id="sq13"></div>
+            <div id="sq14"></div>
+            <div id="sq15"></div>
+            <div id="sq16"></div>
+            <div id="sq17"></div>
+            <div id="sq18"></div>
+        </div>
+
+        <div class="fourthline flexcontainer">
+            <div class="square green"></div>
+            <div class="square red"></div>
+            <div class="square white"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square orange"></div>
+            <div class="square purple"></div>
+            <div class="square purple"></div>
+            <div class="square green"></div>
+            <div class="square red"></div>
+            <div class="square yellow"></div>
+
+        </div>
+        <div class="fifthline flexcontainer">
+            <div class="square green"></div>
+            <div class="square red"></div>
+            <div class="square white"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square orange"></div>
+            <div class="square orange"></div>
+            <div class="square purple"></div>
+            <div class="square purple"></div>
+            <div class="square"></div>
+            <div class="square red"></div>
+            <div class="square yellow"></div>
+
+        </div>
+        <div class="sixthline flexcontainer">
+            <div class="square green"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square orange"></div>
+            <div class="square orange"></div>
+            <div class="square orange"></div>
+            <div class="square purple"></div>
+            <div class="square red"></div>
+            <div class="square yellow"></div>
+
+        </div>
+
+        <div class="seventhline flexcontainer">
+                <div class="square green"></div>
+                <div class="square red"></div>
+                <div class="square black"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square brown"></div>
+                <div class="square brown"></div>
+                <div class="square brown"></div>
+                <div class="square brown"></div>
+                <div class="square brown"></div>
+                <div class="square brown"></div>
+    
+         </div>
+        
+
+
+    </body>
+</html>
+
+
+            <!--   green #8BA526 
+        red #FA5854
+        orange #FF6208
+        brown #715161
+        purple #B5008E
+        yellow #FBCF00
+
+
+
+-->

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+            Small & Large Layout
+        </title>
+        <style>
+                .container{
+                    display:grid;
+                    grid-template-rows: 150px 780px;
+                    grid-template-columns: auto auto auto auto;
+                    grid-gap: 30px;
+                   
+                }
+
+                h2,h3{
+                    padding-left: 30px;
+                }
+
+                #item1{
+                    background-color: yellow;
+                    grid-area: 1 / 1 / 1 / span 4;
+                }
+
+                #item2{
+                    background-color: orangered;
+                    grid-area: 2 / 1 / 2 / span 2 ;
+                }
+
+                #item3{
+                    background-color: greenyellow;
+                    grid-area: 2 / 3 / 2 / span 2 ;
+                }
+
+
+
+               
+
+
+                @media only screen and (max-width: 600px) {
+
+                        .container{
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        div{
+                            margin-top: 30px;
+                        }
+
+                        #item1{
+                            height: 100px;
+                        }
+
+                        #item2{
+                            height: 300px;
+                        }
+
+                        #item3{
+                            height: 300px;
+                        }
+                } 
+
+        
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div id="item1"><h2>Navigation</h2></div>
+            <div id="item2"><h3>LEFT BOX</h3></div>
+            <div id="item3"><h3>RIGHT BOX</h3></div>
+        </div>
+        
+
+
+
+    </body>
+</html>

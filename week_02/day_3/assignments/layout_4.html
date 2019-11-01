@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Layout 4
+    </title>
+    <style>
+            .container{
+                display:flex;
+                flex:auto;
+                
+            }
+
+            #item1{
+                background-color: yellow;
+                height: 150px;
+                width: 100%;
+            }
+
+            #item2{
+                background-color: orangered;
+                height: 400px;
+            }
+
+            #item3{
+                background-color: greenyellow;
+                height: 400px;
+            }
+
+
+            #item4{
+                background-color: purple;
+                height: 400px;
+            }
+
+            #item5{
+                background-color: grey;
+                height: 400px;
+            }
+
+            .container2{
+                display:flex;
+                flex:auto;
+                margin-top: 10px;
+            }
+
+            .container2 div{
+                flex-basis:25%;
+                
+            }
+
+            #item3,#item4,#item5{
+                margin-left:15px;
+            }
+
+
+
+            @media only screen and (  max-width: 992px) {
+                .container2{
+                   flex-flow: row wrap;
+                   
+                } 
+
+                #item3,#item4,#item5{
+                    margin-left:-10px;
+                
+                }
+
+                #item2,#item4{
+                    margin-left:0px;
+                
+                }
+
+                #item4,#item5{
+                    margin-top: 20px;
+                }
+                
+
+
+                .container2 div{
+                    flex-basis: 50%;
+                    margin-left: -10px;
+                    /* width: 50%; */
+                    height:400px;
+                }
+            }
+
+
+            @media only screen and (  max-width: 600px){
+                .container2{
+                    display: flex;
+                    
+                   
+                }
+
+
+                .container2 div{
+                   
+                    flex-basis: auto;
+                    width: 100%;
+                    height: 150px !important;
+                    margin-top: 15px;
+                    
+                }
+            }
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div id="item1"><h2>Navigation</h2></div>
+
+    </div>
+    <div class="container2">
+
+            <div id="item2"><h3>Box 1</h3></div>
+            <div id="item3"><h3>Box 2</h3></div>
+            <div id="item4"><h3>Box 3</h3></div>
+            <div id="item5"><h3>Box 4</h3></div>
+    
+    </div>
+
+
+</body>
+</html>
