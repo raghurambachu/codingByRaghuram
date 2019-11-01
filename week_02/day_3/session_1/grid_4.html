@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Grid 4
+    </title>
+    <style>
+        .container{
+            display: grid;
+            grid-gap: 30px;
+            grid-template-rows: 150px 150px 150px;
+            grid-template-columns: 150px 150px 150px 150px;
+
+        }
+
+        .container > div{
+            border-radius: 6px;
+            background-color: green;
+        }
+
+        #square1{
+            grid-area: 1/1/1/1; 
+        }
+
+        #square2{
+           grid-area: 1 / 2 / 1 / span 2;
+        }
+
+        #square3{
+            grid-area: 1 / 4 / 1 / 4;
+        }
+
+        #square4{
+            grid-area: 2 / 1 / 2 / span 2 ;
+        }
+
+        #square5{
+            grid-area: 2 / 3 / 2 / 3;
+        }
+
+        #square6{
+            grid-area: 2 / 4 / 2 / 4;
+        }
+
+        #square7{
+            grid-area: 3 / 1 / 3 / 1;
+        }
+
+        #square8{
+            grid-area: 3 / 2 / 3 / 2;
+        }
+
+        #square9{
+            grid-area: 3 / 3 / 3 / span 2;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="square1"></div>
+        <div id="square2"></div>
+        <div id="square3"></div>
+        <div id="square4"></div>
+        <div id="square5"></div>
+        <div id="square6"></div>
+        <div id="square7"></div>
+        <div id="square8"></div>
+        <div id="square9"></div>
+    </div>
+    
+
+
+</body>
+
+</html>
