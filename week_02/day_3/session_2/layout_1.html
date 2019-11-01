@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Layout 1
+    </title>
+    <style>
+        .container{
+            display: flex;
+        }
+
+        .rectangles{
+            height: 400px;
+            width: 150px;
+            margin: 10px;
+            background-color: green;
+        }
+
+        @media (max-width: 800px) {
+            .rectangles{
+                    height: 400px;
+                    width: 100px;
+                    margin: 10px;
+                    background-color: orangered !important;
+         }
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="rectangles"></div>
+        <div class="rectangles"></div>
+        <div class="rectangles"></div>
+        <div class="rectangles"></div>
+
+    </div>
+
+
+</body>
+</html>
