@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Grid 2
+    </title>
+    <style>
+
+        .container{
+            display: grid;
+            grid-gap: 15px;
+            grid-template-rows: 150px 780px;
+            grid-template-columns: auto auto auto auto;
+            background:white;
+           
+            
+            
+           
+        }
+
+        .container div{
+            border-radius: 6px;
+        }
+
+       
+        #item1{
+            grid-area: 1 / 1 /  1 / span 4;
+            background: orangered;
+            
+        }
+
+        #item2{
+          grid-area: 2 / 1 /  2 / 1;
+           background: yellowgreen;
+        }
+     
+
+        #item3{
+           grid-area: 2 / 2 / 2 / span 3;
+           background: green;
+
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div id="item1" ></div>
+        
+        <div id="item2"></div>
+
+        <div id="item3"></div>
+        
+           
+    </div>
+
+
+
+
+
+</body>
+
+</html>
