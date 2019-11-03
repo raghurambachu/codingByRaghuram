@@ -20,6 +20,15 @@ body{
   
 }
 
+.header > a{
+    margin-left: 73%;
+    margin-top: -15px;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    bottom: 15px;
+}
+
 #logo ~ div{
     margin-right: 50px;
     margin-top:-15px ;
@@ -606,7 +615,7 @@ body{
     margin-top: 15px;
 }
 
-.applynow{
+.applynowhome{
     height: 45px;
     width: 200px;
     margin-left: 47%;
@@ -628,3 +637,342 @@ body{
    font-size: 20px;
     
 }
+
+
+
+/* For masai_course.html page */
+
+
+.trackcontainer{
+    height: 1000px;
+    width: 100%;
+    background-image: url("https://i.ibb.co/CBZcWVS/Screenshot-from-2019-11-02-10-41-53.png");
+    display: grid;
+    grid-template-columns: 350px auto auto auto auto 350px;
+    grid-template-rows: 200px 300px 150px 200px 150px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    text-align: left;
+    grid-gap: 25px;
+
+
+}
+
+#trackcontaineritem1{
+    grid-area: 1 / 2 / 1 / span 4;
+    margin-top: 50px;
+    
+}
+
+.trackcontainertitle{
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.trackcontainerdesc{
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+#trackcontaineritem2{
+    
+    grid-area: 2/ 2 / 2 / 2;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+#trackcontaineritem3{
+    grid-area: 2 / 4 / 2 / 4;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+
+#trackcontaineritem4{
+    grid-area: 3 / 2 / 3 / 2 ;
+    border-top: 1px solid black;
+   
+}
+
+#trackcontaineritem5{
+    grid-area: 3 / 3 / 3 / 4 ;
+    border-top: 1px solid black;
+    
+    width: 500px;
+}
+
+#trackcontaineritem6{
+    grid-area: 3 / 4 / 3 / 4 ;
+    border-top: 1px solid black;
+    
+}
+
+.trackitemtitle{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 20px;
+
+}
+
+.trackitemdesc{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 35px;
+}
+
+#trackcontaineritem7{
+        grid-area: 4 / 1 /4 / span 6;
+        
+}
+
+#trackcontaineritem7 > .trackitemdesc{
+    font-size: 30px;
+    font-weight: 350;
+}
+
+.applynowcourse{
+     height: 45px;
+   
+     width: 200px;
+   
+    font-size: 20px;
+    border-radius: 35px;
+    background: #3584A7;
+    border: 2px  solid white;
+    text-align: center;
+  
+}
+
+#trackcontaineritem8{
+    grid-area: 5 / 3 / 5 /span 2;
+    margin-left: 22%;
+    margin-top: -55px;
+  
+    
+}
+
+.curriculumcontainer{
+    display: grid;
+    height: 1000px;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    grid-template-rows: 100px 150px 150px 200px 100px 150px 150px;
+    grid-template-columns:400px 320px auto 320px 400px ;
+    grid-gap: 20px;
+}
+
+#curriculumcontaineritem1{
+    grid-area: 1/1/1/span 5 ;
+    font-size: 50px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+#curriculumcontaineritem2{
+    grid-area: 2/2/2/2;
+}
+
+#curriculumcontaineritem3{
+    grid-area: 2/3/2/3;
+}
+
+#curriculumcontaineritem4{
+    grid-area: 2/4/2/4;
+}
+
+#curriculumcontaineritem5{
+    grid-area: 3/2/3/2;
+}
+
+#curriculumcontaineritem6{
+    grid-area: 3/3/3/3;
+}
+
+#curriculumcontaineritem7{
+    grid-area: 3/4/3/4;
+}
+
+#curriculumcontaineritem8{
+    grid-area:4/2/4/2;
+}
+
+#curriculumcontaineritem9{
+    grid-area: 4/3/4/3;
+}
+ 
+#curriculumcontaineritem10{
+    grid-area: 4/4/4/4;
+}
+
+#curriculumcontaineritem11{
+    grid-area: 5/1/5/span 5;
+    font-size: 50px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+#curriculumcontaineritem12{
+    grid-area: 6/2/6/2;
+}
+
+#curriculumcontaineritem13{
+    grid-area: 6/3/6/3;
+}
+
+#curriculumcontaineritem14{
+    grid-area: 6/4/6/4;
+}
+
+#curriculumcontaineritem15{
+    grid-area: 7/2/7/2;
+}
+
+#curriculumcontaineritem16{
+    grid-area: 7/3/7/3;
+}
+
+#curriculumcontaineritem17{
+    grid-area: 7/4/7/4;
+}
+
+.curriculumtitle{
+    font-size: 32px;
+    font-weight: 200;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.curriculumdesc{
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 15px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#curriculumcontaineritem1 ~ div{
+    border-left: 0.3rem solid #dee2e6;
+    
+}
+
+/* masai_fees.html */
+
+
+.fees + div{
+    font-size: 35px;
+}
+
+.numberscontainer{
+    display: grid;
+    height: 700px;
+    width:100%;
+    grid-template-rows: 150px 200px 200px 150px ;
+    grid-template-columns: 350px 370px auto 370px 350px;
+    grid-gap: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+
+#numberitem1{
+    grid-area: 1/1/1/span 5;
+}
+
+#numberitem2{
+    grid-area: 2/2/2/2;
+}
+#numberitem3{
+    grid-area: 2/3/2/3;
+}
+#numberitem4{
+    grid-area: 2/4/2/4;
+}
+#numberitem5{
+    grid-area: 3/2/3/2;
+}
+#numberitem6{
+    grid-area: 3/3/3/3;
+}
+#numberitem7{
+    grid-area: 3/4/3/4;
+}
+#numberitem8{
+    grid-area: 4/1/4/span 5;
+}
+
+.numbertitle{
+    font-size: 35px;
+    color: #3584A7;
+}
+
+.numberdesc{
+    font-size: 20px;
+}
+
+#numberitem5, #numberitem6, #numberitem7{
+    border-bottom: 1px solid black;
+}
+
+#numberitem1, #numberitem8{
+    font-size: 50px;
+    font-weight: 300;
+    margin-top: 30px;
+   
+}
+
+
+.faqcontainer{
+    height: 450px;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+/* Collapsible for FAQ */
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+background-color: #eee;
+color: #444;
+cursor: pointer;
+padding: 18px;
+width: 100%;
+border: none;
+text-align: left;
+outline: none;
+font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+background-color: white;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+padding: 0 18px;
+display: none;
+overflow: hidden;
+background-color: #f1f1f1;
+height: 100px;
+}
+
+
+.collapsible{
+    width: 60%;
+    margin-left: 20%;
+    font-size: 20px;
+}
+
+
+.bordered > a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
