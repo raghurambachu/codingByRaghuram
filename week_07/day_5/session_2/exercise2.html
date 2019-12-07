@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+    <div id = "root"></div>
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script  src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script type ="text/babel">
+    //Write your code below this line
+    const myself = {
+        name: 'Raghuram',
+        age:26,
+        dob:1993,
+        favColor: 'blue'
+    }
+    const todoTasks =['Homework','Cooking','Cycling','Sleeping','Jogging']
+    
+   
+    const element = (
+        <div>
+                <h1>My Todo List</h1>
+                <ul>
+                    <li>{todoTasks[0]}</li>
+                    <li>{todoTasks[1]}</li>
+                    <li>{todoTasks[2]}</li>
+                    <li>{todoTasks[3]}</li>
+                    <li>{todoTasks[4]}</li>
+                </ul>
+                <p>
+                        My Name is : {myself.name}. I am {myself.age} years old. I was born in {myself.dob} and my favourite color is {myself.favColor}.
+                </p>
+        </div>
+    );
+    const root = document.getElementById('root');
+    ReactDOM.render(element,root);
+
+    </script>
+</body>
+</html>

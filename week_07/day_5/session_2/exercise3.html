@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+    <div id = "root"></div>
+    <label for="num1">Number 1 :</label>
+    <input type="text" placeholder="number" id="num1">
+    <label for="num2">Number 2 : </label>
+    <input type="text" placeholder="number" id="num2">
+    <button id="submit" >Add</button>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script  src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script type ="text/babel">
+    //Write your code below this line
+            function displaySum(num1,num2){
+                let  element = <h1>{num1 + num2}</h1>
+                ReactDOM.render(element,root)
+            }
+             const root =document.querySelector('#root');
+            const button = document.querySelector('#submit');
+            
+            
+            button.addEventListener('click',() =>{
+                const num1 =parseInt(document.getElementById('num1').value);
+                const num2 =parseInt(document.getElementById('num2').value);
+                displaySum(num1,num2);
+            })
+    </script>
+</body>
+</html>
