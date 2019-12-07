@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button id="createH1" onclick="appendH1ToHeadings()">Create H1</button>
+        <button  onclick="appendH3ToHeadings()">Create 2 H3</button>
+        <button  onclick="create10Divs()">Create DIVS</button>
+        <button  onclick="addStudents()">Add Students</button>
+        <button  onclick="addCopyright()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+            function appendH1ToHeadings() {
+               let header1 =  document.createElement('h1');
+               header1.innerText = 'Masai';
+               let headingsDiv = document.querySelector('#headings');
+               headingsDiv.appendChild(header1);
+            }
+
+            function appendH3ToHeadings() {
+               let h3First =  document.createElement('h3');
+               let h3Second =  document.createElement('h3');
+              h3First.innerText ="A Transformation in education!";
+              h3Second.innerText ="Learn to earn, pay when you get"
+               let headingsDiv = document.querySelector('#headings');
+               headingsDiv.appendChild(h3First);
+               headingsDiv.appendChild(h3Second);
+            }
+
+            function create10Divs(){
+                let contDiv = document.getElementById('cont');
+                for(let i=0;i<10;i++){
+                    let createDiv = document.createElement('div');
+                    createDiv.innerText = 'content '+(i+1);
+                    contDiv.appendChild(createDiv)
+                }
+            }
+
+            function addStudents(){
+                let ulTag = document.getElementById('vikings');
+                for(let i=0;i<students.length;i++){
+                    let createLi = document.createElement('li');
+                    createLi.innerText = students[i];
+                    ulTag.appendChild(createLi)
+                }
+            }
+
+
+            function addCopyright(){
+                let copyPara = document.createElement('p');
+                
+                const btnCreateH1 =  document.getElementById('createH1');
+                btnCreateH1.insertAdjacentHTML('beforebegin',"<p>@ masai 2019</p>")
+            }
+            </script>
+    </body>
+</html>

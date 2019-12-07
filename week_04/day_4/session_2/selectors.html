@@ -1,0 +1,79 @@
+<!-- Complete the functionality in the file selectors.html
+On clicking the button Change H1 the colour of first <h1> should turn to red
+On clicking the button Change H3 the colour of all <h3> should turn to green
+On clicking the button Change H5 the colour of all <h5> should turn to blue
+On clicking Change Green all the elements with the class green should change to green
+On clicking Change Blue all the elements with the class blue should change to blue
+On clicking Change Red all the elements with the class red should change to red
+ -->
+
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1 id="firstH1">First H1</h1>
+        <h1 id="secondH1">Second H1</h1>
+        <h3 id="firstH3">First H3</h3>
+        <h3 id="secondH3">Second H3</h3>
+        <h5 id="firstH5">First H5</h5>
+        <h5 id="secondH5">Second H5</h5>
+        <h5 id="thirdH5">Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button onclick="turnRed()" id="ch1">Change H1</button>
+        <button onclick="turnGreen()" id="ch3">Change H3</button>
+        <button onclick="turnBlue()" id="ch5">Change H5</button>
+        <button onclick="changeGreen()" id="cg">Change Green</button>
+        <button onclick="changeRed()" id="cr">Change Red</button>
+        <button onclick="changeBlue()" id="cb">Change Blue</button>
+        <script>
+
+
+
+            function turnRed(){
+                document.querySelector('#firstH1').style.color = 'red';
+            }
+            function turnGreen(){
+               const h3=  document.querySelectorAll('h3');
+               for(let e of h3){
+                   e.style.color ='green'
+               }
+            }
+            function turnBlue(){
+                const h5=  document.querySelectorAll('h5');
+               for(let e of h5){
+                   e.style.color ='blue'
+               }
+            }
+            function changeGreen(){
+                const greens=  document.querySelectorAll('.green');
+               for(let e of greens){
+                   e.style.color ='green'
+               }
+            }
+            function changeRed(){
+                const reds=  document.querySelectorAll('.red');
+               for(let e of reds){
+                   e.style.color ='red'
+               }
+            }
+            function changeBlue(){
+                const blues=  document.querySelectorAll('.blue');
+               for(let e of blues){
+                   e.style.color ='blue'
+               }
+            }
+
+
+
+           
+        </script>
+    </body>
+</html>
