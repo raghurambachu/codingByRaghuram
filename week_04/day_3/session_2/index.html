@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        body{
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        label{
+            margin: 1em 0;
+            
+        }
+
+        input{
+            display:block;
+            padding: 1em;
+            font-size: 1rem;
+            margin: 1.5em 0;
+        }
+
+        button{
+            background: red;
+            border: none;
+            padding: 0.5em 1.5em;
+            color: whitesmoke;
+            font-weight: bold;
+            margin-left: 5em;
+        }
+
+        #container1{
+
+            background: #CDDC39;
+            padding: 2.5em 5em;
+            width: 20%;
+            margin: 0 auto;
+            border: 2px solid yellow;
+            margin-top: 1em;
+
+        }
+
+        #container2{
+
+            background: #CDDC39;
+            padding: 1.5em 5em;
+            width: 20%;
+            margin: 0 auto;
+            border: 2px solid yellow;
+            margin-top: 0.5em;
+
+        }
+
+        #container3{
+
+            background: #CDDC39;
+            padding: 1.5em 5em;
+            width: 20%;
+            margin: 0 auto;
+            border: 2px solid yellow;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+
+        }
+
+        select{
+            padding: 1em 1.8em;
+            font-size: 0.8em;
+            margin-top: 0.8em;
+        }
+
+        #submit-country{
+            margin-top: 1.5em;;
+        }
+    </style>
+</head>
+<body>
+        
+    <div id="container1">
+            <h4>Check Eligibility: Driving License</h4>
+            <label for="name">Full name</label>
+            <input type="text" placeholder="NAME" id="name">
+            
+            <label for="age">Date of Birth(Year- YYYY)</label>
+            <input type="text" placeholder="YYYY" id="age">
+            
+            <button id="submit" onclick="showMessage()">Submit</button>
+            <hr>
+            <p id='message'></p>
+    </div>
+
+    <div id="container2">
+            <h3>Change Button color</h3>
+            <label for="color-input"> Color</label>
+            <input type="text" placeholder="Colour" id="color-input">
+            
+            <button id="submit-color" onclick="changeBtnColor()">Submit</button>
+            <hr>
+            <p id='message1'></p>
+    </div>
+
+    <div id="container3">
+            <h3>Know your Continent</h3>
+            <label for="continent_select">Choose Country</label>
+            <select id = "continent_select">
+                    <option value = "India"> India </option>	
+                    <option value = "Usa"> United States Of America </option>	
+                    <option value = "China"> China </option>	
+                    <option value = "Nepal"> Nepal </option>	
+                    <option value = "Australia"> Australia </option>	
+                    <option value = "France"> France </option>	
+                    <option value = "Germany"> Germany </option>	
+                    <option value = "South Africa"> South Africa </option>	
+                    <option value = "Nigeria"> Nigeria </option>	
+                    <option value = "Mexico"> Mexico </option>	
+                    <option value = "Argentina"> Argentina </option>	
+                    <option value = "Brazil"> Brazil </option>	
+                    <option value = "Canada"> Canada </option>	
+                    <option value = "Singapore"> Singapore </option>	
+                    <option value = "Sweden"> Sweden </option>	
+                </select>
+                <button id="submit-country" onclick="showContinent()">Submit</button>
+                <hr>
+                <p id='message-continent'></p>
+    </div>
+
+
+        <script>
+                        function showMessage(){
+                            const currYear = 2019;
+                            let name = document.getElementById('name').value;
+                            let age =currYear - parseInt(document.getElementById('age').value);
+                            console.log(age);
+                            document.getElementById('message').innerHTML ='';
+
+                            if(age > 18) document.getElementById('message').innerText= `${name} , You can drive in India!`;
+                            if(age === 18) document.getElementById('message').innerText= `${name} , You are just old enough to drive in India !`;
+                            if(age < 18)  document.getElementById('message').innerText= `${name} , You can't drive in India!`;
+                        }
+
+                        function changeBtnColor(){
+                            let color = document.getElementById('color-input').value;
+                            document.getElementById('submit-color').style.backgroundColor = color;
+
+                            document.getElementById('message1').innerText = `The color of the button changed to ${color}`;
+                            document.getElementById('color-input').value="";
+
+                        }
+
+                        function showContinent(){
+
+                            const country = document.getElementById('continent_select').value;
+                            let continent = '';
+                            switch(country){
+
+                                case 'India':
+                                        continent = 'Asia';
+                                        break;
+                                case 'Usa':
+                                        continent = 'North America';
+                                        break;
+                                case 'China':
+                                        continent = 'Asia';
+                                        break;   
+                                 case 'Nepal':
+                                        continent = 'Asia';
+                                        break;
+                                case 'Australia':
+                                        continent = 'Australia';
+                                        break;
+                                case 'France':
+                                        continent = 'Europe';
+                                        break;
+                                case 'Germany':
+                                        continent = 'Europe';
+                                        break;   
+                                 case 'South Africa':
+                                        continent = 'Africa';
+                                        break;
+                                case 'Nigeria':
+                                        continent = 'Africa';
+                                        break;
+                                case 'Argentina':
+                                        continent = 'South America';
+                                        break;
+                                case 'Brazil':
+                                        continent = 'South America';
+                                        break;   
+                                 case 'Canada':
+                                        continent = 'North America';
+                                        break;   
+                                case 'Singapore':
+                                        continent = 'Asia';
+                                        break;   
+                                 case 'Sweden':
+                                        continent = 'Europe';
+                                        break;   
+                                        
+
+                            }
+
+                            document.getElementById('message-continent').innerText = `The continent of ${country} is : ${continent}`;
+
+                        }
+
+
+        </script>
+    
+</body>
+</html>
