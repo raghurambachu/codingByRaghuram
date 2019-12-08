@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.JS.9.1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input type="text" name = "num1" id="num1">
+	<input type="text" name = "num2" id="num2">
+	<p id="exponent-para"> </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.JS.9.1-->
+
+	<!-- These elements below are for FSD.JS.9.2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p id="sum-para"></p>
+	<input type="text" id="limit">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+	
+	<!-- These elements above are for FSD.JS.9.2-->
+
+	
+	<script type="text/javascript">
+		//Write javascript for FSD.JS.9.1 here
+		function exponent(){
+            const num1 =parseInt(document.querySelector('#num1').value) ;
+            const num2 =parseInt(document.querySelector('#num2').value) ;
+            console.log(num1,num2)
+            let exp=1;
+            for(let i=0;i<num2;i++){
+                exp *= num1
+            }
+            document.querySelector('#exponent-para').innerText = `${exp}`;
+
+			
+		}
+		//Write javascript for FSD.JS.9.2 here
+		function sumOf3And5(){
+            const limit =parseInt(document.querySelector('#limit').value);
+            let sum=0;
+            for(let i=0;i<=limit;i++){
+                if(i%15 === 0)
+                    sum += i;
+            }
+            document.querySelector('#sum-para').innerText = sum;
+
+
+		}
+		
+	</script>
+</body>
+</html>
