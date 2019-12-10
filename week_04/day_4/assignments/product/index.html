@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <style>
+
+        body{
+            margin: 0%;
+            box-sizing: border-box;
+            font-size: 1.12rem;
+        }
+
+        .product-container{
+            
+            margin: 0 auto;
+            margin-top: 2em;
+            width: 90%;
+            display: grid;
+            grid-template-columns: 250px auto;
+            grid-gap: 3em;
+            grid-template-areas: "add-cont display-cont";
+        }
+
+        .add-container{
+            grid-area: add-cont;
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+        }
+        .display-container{
+            grid-area: display-cont;
+        }
+
+        input{
+            font-size: 1.12rem;
+            padding: 0.5em 1em;
+            border-radius: 3px;
+            border: 1px solid blue;
+            margin: 0.75em 0;
+            transition: transform 500ms;
+            
+        }
+
+        input:focus{
+            transform: scale(1.05);
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        .btn-add, .btn-update{
+            margin-top: 2em;
+            background: #f18f18;
+            border: none;
+            padding: 0.9em 5em;
+            border-radius: 4px;
+            font-weight: bold;
+            align-self: center;
+            transition: transform 400ms;
+            transition: color 400ms;
+        }
+
+        .btn-add:hover, .btn-add:focus, .btn-update:hover, .btn-update:focus{
+            transform: scale(1.1);
+            color: whitesmoke;
+        }
+
+        img{
+            display: block;
+            min-width: 250px;
+           object-fit: cover;
+
+        }
+
+        
+
+        .btn-delete,.btn-edit{
+           
+            background: lightgreen;
+            border: none;
+            font-weight: bold;
+            padding: 0.4em 1em;
+            border-radius: 4px;
+           
+        }
+
+        .btn-edit{
+            padding: 0.4em 2em;
+        }
+    
+  
+
+     
+
+    
+    </style>
+</head>
+<body>
+    
+    <div class="product-container">
+                <div class="add-container">
+                            <div>
+                                <label for="prodName">Product Name</label>
+                                <input type="text" id="prodName" placeholder="name">
+                            </div>
+                            <div>
+                                <label for="prodImg">Image Url</label>
+                                <input type="text" id="prodImg" placeholder="url">
+                               
+                            </div>
+                            <div>
+                                <label for="prodPrice">Price</label>
+                                <input type="text" id="prodPrice" placeholder="INR: 50">
+                            </div>
+                            
+                                    <button  class="btn btn-add" value="add">Add</button>
+                            
+                </div>
+        <div class="display-container">
+
+                <table id="table" class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Price</th>
+                            <th width="130px" scope="col">Delete</th>
+                            <th width="130px"  scope="col">Update</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                        </tbody>
+                      </table>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        //Global handles
+        const addBtn =document.querySelector('.btn-add');
+        const getTableBody = document.querySelector('tbody');
+
+        const prodName= document.querySelector('#prodName');
+        const prodImgUrl = document.querySelector('#prodImg');
+        const prodPrice =document.querySelector('#prodPrice');
+        
+        //Represents global array containing products as object
+        let arrayProducts = [];
+     
+        //Insertion of products
+        
+        addBtn.addEventListener('click',function(){
+                
+                let prodObject = {
+                    name: prodName.value,
+                    url: prodImgUrl.value,
+                    price: prodPrice.value
+                }
+
+                const urlRegex =/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi
+
+                if(!urlRegex.test(prodObject.url))
+                    prodObject.url =" http://leeford.in/wp-content/uploads/2017/09/image-not-found.jpg";
+
+                arrayProducts.push(prodObject);
+
+                prodName.value = "";
+                prodImgUrl.value ='';
+                prodPrice.value ="";
+                getTableBody.innerHTML =""
+                printTable(arrayProducts)
+   
+        })
+
+
+        //Printing of table on having products in array.
+        //products is a reference to arrayProducts
+
+        function printTable(products){
+            products.forEach((product,index,prodArray) => {
+
+                //creation of row and subsequent td that are inserted in tbody
+                const tr = document.createElement('tr');
+                const th = document.createElement('th');
+                th.setAttribute('scope','row');
+                th.innerText = index + 1;
+                tr.append(th);
+                  
+                const td1 = document.createElement('td');
+                td1.innerText = product['name'];
+                tr.append(td1)
+
+                const td2 = document.createElement('td');
+                const url = product['url'];
+                td2.innerHTML = `<img src=${url} height="100px" >`;
+                tr.append(td2)
+
+                const td3 = document.createElement('td');
+                td3.innerText = product['price'];
+                tr.append(td3)
+
+                const td4 = document.createElement('td');
+                td4.innerHTML = `<button value="${index}" class='btn-delete'>Delete</button>`;
+                tr.append(td4)
+
+                //adding event listener to each delete buttons for all the products
+
+               createTdForDeleteWithEventListener(td4,prodArray)
+
+                const td5 = document.createElement('td');
+                td5.innerHTML = `<button value="${index}" class='btn-edit'>Edit</button>`;
+                tr.append(td5)
+
+                //adding eventlistener for each of the edit buttons
+
+                createTdForEditWithEventListener(td5,prodArray);
+                
+
+                getTableBody.appendChild(tr)
+                
+            });
+        }
+
+        function createTdForDeleteWithEventListener(td4,products){
+
+            td4.querySelector('button').addEventListener('click',function(event){
+                    
+                    const newArrayOfProducts = products.filter(function(element,counter){
+                        counter+=''
+                       //Each of the delete button is attached with value and that equals the index(counter) or position in array
+                            if(event.srcElement.value != counter )
+                                return element
+                    })
+                    products= [];
+                    products =newArrayOfProducts;
+                    getTableBody.innerHTML=""
+                    arrayProducts = products; //arrayProducts is global reference so it needs to be updated whenever products array is updated.
+                    printTable(products)
+                })
+        }
+
+        function createTdForEditWithEventListener(td5,products){
+            td5.querySelector('button').addEventListener('click',function(event){
+
+                    const elementId = parseInt(event.srcElement.value)
+                    getProductObj = products[elementId];
+                    prodName.value = getProductObj.name;
+                    prodImgUrl.value = getProductObj.url;
+                    prodPrice.value = getProductObj.price;
+
+                    addBtn.style.display = 'none';
+                    const  addContainer = document.querySelector('.add-container')
+                    const updateButton = document.createElement('button')
+                    updateButton.innerText = "Update"
+                    updateButton.classList.add('btn-update');
+                    addContainer.appendChild(updateButton)
+
+                    updateButton.addEventListener('click',function(){
+                        let updatedProductObj = {}
+                        updatedProductObj.name= prodName.value;
+                        updatedProductObj.url =prodImgUrl.value;
+                        updatedProductObj.price = prodPrice.value;
+                        products[elementId] = updatedProductObj;
+
+                        prodName.value ='';
+                        prodImgUrl.value =''
+                        prodPrice.value ="";
+
+                        updateButton.style.display ='none';
+                        addBtn.style.display = 'initial';
+
+                        getTableBody.innerHTML=""
+                        arrayProducts = products
+                        printTable(products);
+
+                    })
+
+                })
+        }
+
+
+    </script>
+     
+
+</body>
+</html>
