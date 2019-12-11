@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Container</title>
+        <style>
+                .container{
+                        background: lightskyblue;
+                        width: 400px;
+                        height: 350px;
+                        padding: 3em;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: flex-end;
+                        margin: 0 auto;
+                        border-radius: 15px;
+                }
+
+                .button{
+                        background: orange;
+                        border: none;
+                        font-size: 1.5rem;
+                        padding: 0.5em 2em;
+                        border-radius: 8px;
+                        font-weight: bold;
+                }
+        </style>
+</head>
+<body>
+        
+        <div class="container">
+                <button class="button">Submit</button>
+        </div>
+
+        <script>
+                const originalColor = 'orange';
+                const anotherColor = 'green';
+
+                const getCont = document.querySelector('.container');
+                const getButton = document.querySelector('.button');
+                getCont.addEventListener('mouseenter',function(){
+                        getButton.style.backgroundColor = anotherColor;
+                })
+
+                getCont.addEventListener('mouseleave',function(){
+                        getButton.style.backgroundColor = originalColor;
+                })
+
+
+        
+        </script>
+</body>
+</html>
