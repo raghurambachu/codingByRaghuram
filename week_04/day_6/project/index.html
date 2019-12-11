@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Expense Manager</title>
+        <!-- Typography -->
+        <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap Only for the purpose of table -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <!-- Custom css -->
+        <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+        <div class="body-container">
+
+                         <!-- Start of Left container -->
+                        <div class="left-container"> 
+                                <!-- Start of Manager Container -->
+                                <div class="manager-container">
+
+                                        <div class="container-title">
+                                                <h1>Expense Manager</h1>
+                                        </div>
+                                        
+                                        <!-- Source Part -->
+                                        <div class="source-container shadow">
+                                                <h3>Source Tracker</h3>
+                                                <div>
+                                                        <label for="src-date">Date of Receipt</label>
+                                                        <input type="date" class="src-date" id="src-date">
+                                                </div>
+                                                <div>
+                                                        <label for="src-name">Source Name</label>
+                                                        <input type="text" id="src-name" class="src-name" placeholder="source">
+                                                </div>
+                                                <div>
+                                                        <label for="src-amt">Amount</label>
+                                                        <input type="number" id="src-amt" class="src-amt" placeholder="amount">
+                                                </div>
+                                                <button id="src-add" class="src-add btn btn-add">Add</button>
+                                                <div class="src-display">
+                
+                                                </div>                                
+                                        </div>
+                                        <!-- End of Source Part -->
+                
+                                        <!-- Expenses Part -->
+                                        <div class="expense-container shadow">
+                
+                                                <h3>Expense Tracker</h3>
+                                                <div>
+                                                        <label for="exp-date">Date of Expense</label>
+                                                        <input type="date" class="exp-date" id="exp-date">
+                                                </div>
+                                                <div>
+                                                        <label for="exp-name">Expense Name</label>
+                                                        <input type="text" id="exp-name" class="exp-name" placeholder="expense">
+                                                </div>
+                                                <div>
+                                                        <label for="exp-amt">Amount</label>
+                                                        <input type="text" id="exp-amt" class="exp-amt" placeholder="amount">
+                                                </div>
+                                                <button id="exp-add" class="exp-add btn btn-add">Add</button>
+                                                <div class="exp-display">
+                
+                                                </div>                 
+                        
+                                        </div>
+                                        <!--End of Expenses part -->
+                
+                
+                                        <!-- Balance container -->
+                                        <div class="balance-container"> 
+                                                <h2 class="bal" id="balance"></h2>
+                                        </div>
+                                </div>
+                
+                                <!-- End of Manager container -->
+                        </div>
+                        <!-- End of left container -->
+                
+                
+                
+                        <!-- Start of Right Container -->
+                        <div class="right-container">
+                                        <!-- Start of Source table -->
+                                <div class="source-table">
+                                                <table class="table">
+                                                                <thead>
+                                                                  <tr>
+                                                                    <th scope="col">No.</th>
+                                                                    <th scope="col">Date</th>
+                                                                    <th scope="col">Source</th>
+                                                                    <th scope="col">Amount</th>
+                                                                  </tr>
+                                                                </thead>
+                                                                <tbody id="source-tbody">                                                             
+                                                                </tbody>
+                                                              </table>
+                                </div>
+
+                                        <!-- End of source table -->
+
+
+                                        <!-- Start of Expense table -->
+                                <div class="expense-table">
+
+                                                <table class="table table-dark">
+                                                                <thead>
+                                                                  <tr>
+                                                                   <th scope="col">No.</th>
+                                                                    <th scope="col">Date</th>
+                                                                    <th scope="col">Expense</th>
+                                                                    <th scope="col">Amount</th>
+                                                                  </tr>
+                                                                </thead>
+                                                                <tbody id="expense-tbody">
+                                                                 
+                                                                </tbody>
+                                                              </table>
+                                                              
+                
+                                </div>
+                                        <!-- End of Expense table -->
+                
+
+                        </div>
+                        <!-- End of Right container -->
+
+        </div>
+       
+
+        
+        
+
+
+
+
+
+
+
+        <script src="./js/utils.js"></script>
+        <script src="./js/index.js"></script>
+</body>
+</html>
