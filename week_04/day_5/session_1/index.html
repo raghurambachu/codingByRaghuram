@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.JS.10.1 !-->
+  <h1 id="firstH1">Change the buttons text color random value</h1>
+  <button id="randomColor">Click here to change my color</button>
+
+  <!-- bonus challenge -->
+  <h1 id="secondH1">background-color of the button must change</h1>
+  <button id="arrayColor">Click me to change my color to an array value!</button>
+
+  <!-- FSD.JS.10.2 !-->
+  <h1 id="thirdH1">My color should change when I double click the button!</h1>
+  <button id="doubleClickButton">Double Click here to change the color of the h1 tag !</button>
+  
+  <!-- FSD.JS.10.3 !-->
+  <h1>The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id="twiceBtn">Click here to change my color!</button>
+
+
+  <button id="mouseOverBtn" >Mouse over challenge</button>
+  <script>
+
+          const getH1 = document.querySelector('#firstH1');
+          const getRandomBtn = document.querySelector('#randomColor');
+
+          function getRandom(){
+                getRandomNumber = Math.floor(Math.random()*255);
+                return getRandomNumber;
+          }
+
+          getRandomBtn.addEventListener('click', function(){
+                 getRandomBtn.style.color = `rgb(${getRandom()},${getRandom()},${getRandom()})`;
+          })
+
+          //bonus challenge
+          const getArrayBtn = document.querySelector('#arrayColor');
+          const arrayColors =['violet','indigo','blue','green','yellow','orange','red']
+          let counter =0
+          getArrayBtn.addEventListener('click',function(){
+                counter = counter % 7;
+                getArrayBtn.style.background =`${arrayColors[counter]}`
+                counter++;
+          })
+
+
+          //FSD.JS.10.2 !
+          const dcBtn = document.querySelector('#doubleClickButton');
+          const thirdH1 =document.querySelector('#thirdH1');
+
+          dcBtn.addEventListener('dblclick',function(){
+                  thirdH1.style.color =  `rgb(${getRandom()},${getRandom()},${getRandom()})`;
+          })
+
+          // FSD.JS.10.3 
+          
+          let dblClickCounter = 0;
+          const twiceBtn = document.querySelector('#twiceBtn');
+
+          function switchColor(){
+
+                if(dblClickCounter === 1)
+                        twiceBtn.removeEventListener('click',switchColor);
+
+                twiceBtn.style.color =  `rgb(${getRandom()},${getRandom()},${getRandom()})`;
+                dblClickCounter++;
+          }
+          twiceBtn.addEventListener('click',switchColor);
+
+          //mouseover
+          const getMouseOverBtn =document.querySelector('#mouseOverBtn');
+          getMouseOverBtn.addEventListener('mouseover',function(){
+                  const fontSize = getRandom();
+                  getMouseOverBtn.style.fontSize = `${fontSize}px`;
+          })
+
+
+
+  
+  </script>
+</body>
+</html>
