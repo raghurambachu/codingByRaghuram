@@ -1,5 +1,6 @@
 // global DOM handles
 const srcAddBtnDOM = document.querySelector('.src-add');
+const srcUpdateBtnDOM = document.querySelector('.btn-upd-src');
 const srcDateDOM = document.querySelector('.src-date');
 const srcNameDOM = document.querySelector('.src-name');
 const srcAmountDOM = document.querySelector('.src-amt');
@@ -8,6 +9,7 @@ const srcDisplayDOM = document.querySelector('.src-display');
 const balanceDOM = document.querySelector('#balance');
 
 const expAddBtnDOM = document.querySelector('.exp-add');
+const expUpdateBtnDOM = document.querySelector('.btn-upd-exp');
 const expDateDOM = document.querySelector('.exp-date');
 const expNameDOM = document.querySelector('.exp-name');
 const expAmountDOM = document.querySelector('.exp-amt');

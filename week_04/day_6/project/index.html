@@ -9,6 +9,9 @@
         <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap" rel="stylesheet">
 
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
         <!-- Bootstrap Only for the purpose of table -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         
@@ -33,7 +36,7 @@
                                                 <h3>Source Tracker</h3>
                                                 <div>
                                                         <label for="src-date">Date of Receipt</label>
-                                                        <input type="date" class="src-date" id="src-date">
+                                                        <input type="date" class="src-date" id="src-date" placeholder="mm/dd/yyyy">
                                                 </div>
                                                 <div>
                                                         <label for="src-name">Source Name</label>
@@ -44,6 +47,7 @@
                                                         <input type="number" id="src-amt" class="src-amt" placeholder="amount">
                                                 </div>
                                                 <button id="src-add" class="src-add btn btn-add">Add</button>
+                                                <button id="src-update" class="src-update btn btn-upd-src">Update</button>
                                                 <div class="src-display">
                 
                                                 </div>                                
@@ -56,7 +60,7 @@
                                                 <h3>Expense Tracker</h3>
                                                 <div>
                                                         <label for="exp-date">Date of Expense</label>
-                                                        <input type="date" class="exp-date" id="exp-date">
+                                                        <input type="date" class="exp-date" id="exp-date" placeholder="mm/dd/yyyy">
                                                 </div>
                                                 <div>
                                                         <label for="exp-name">Expense Name</label>
@@ -67,6 +71,7 @@
                                                         <input type="text" id="exp-amt" class="exp-amt" placeholder="amount">
                                                 </div>
                                                 <button id="exp-add" class="exp-add btn btn-add">Add</button>
+                                                <button id="exp-update" class="exp-update btn btn-upd-exp">Update</button>
                                                 <div class="exp-display">
                 
                                                 </div>                 
@@ -98,6 +103,8 @@
                                                                     <th scope="col">Date</th>
                                                                     <th scope="col">Source</th>
                                                                     <th scope="col">Amount</th>
+                                                                    <th scope="col">Edit</th>
+                                                                    <!-- <th scope="col">Del</th> -->
                                                                   </tr>
                                                                 </thead>
                                                                 <tbody id="source-tbody">                                                             
@@ -118,6 +125,8 @@
                                                                     <th scope="col">Date</th>
                                                                     <th scope="col">Expense</th>
                                                                     <th scope="col">Amount</th>
+                                                                    <th scope="col">Edit</th>
+                                                                    <!-- <th scope="col">Del</th> -->
                                                                   </tr>
                                                                 </thead>
                                                                 <tbody id="expense-tbody">

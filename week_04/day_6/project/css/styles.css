@@ -29,6 +29,11 @@ label {
 	color: rgba(0, 0, 0, 0.5);
 }
 
+.src-update,
+.exp-update {
+	display: none;
+}
+
 input {
 	display: block;
 	margin-bottom: 1em;
@@ -122,4 +127,40 @@ input:focus {
 
 .table {
 	font-family: 'Ubuntu', sans-serif;
+}
+
+.source-edit,
+.source-delete,
+.expense-edit,
+.expense-delete {
+	background: none;
+	border: none;
+	transition: transform 100ms;
+}
+
+.source-edit:hover,
+.source-edit:focus,
+.source-delete:hover,
+.source-delete:focus,
+.expense-edit:hover,
+.expense-edit:focus,
+.expense-delete:hover,
+.expense-delete:focus {
+	transform: scale(1.2);
+	outline: none;
+}
+
+.source-edit,
+.expense-edit {
+	color: #4caf50;
+}
+
+.source-delete,
+.expense-delete {
+	color: #f44336;
+}
+
+.source-date,
+.expense-date {
+	font-size: 0.8rem;
 }
