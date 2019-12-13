@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Student Tracker</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+        <link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Ubuntu:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+        <div class="main-container flex-container">
+
+                <div class="left-container flex-container">
+
+                        <div class="title">
+                               <h2> Student Tracker</h2>
+                        </div>
+                        <div class="inputs-container flex-container">
+
+                                <div class="student-entry-container flex-container shadow">
+
+                                      
+                                                <h3>Student Info</h3>
+                                               
+                                                        <label for="name">Name</label>
+                                                         <input type="text" id="name" class="name" placeholder="name">
+                                               
+                                        
+                                                        <label for="grade">Grade</label>
+                                                         <select name="grade" id="grade">
+                                                                 <option value="Grade-1">Grade-1</option>
+                                                                 <option value="Grade-2">Grade-2</option>
+                                                                 <option value="Grade-3">Grade-3</option>
+                                                                 <option value="Grade-4">Grade-4</option>
+                                                                 <option value="Grade-5">Grade-5</option>
+                                                                 <option value="Grade-6">Grade-6</option>
+                                                                 <option value="Grade-7">Grade-7</option>
+                                                                 <option value="Grade-8">Grade-8</option>
+                                                                 <option value="Grade-9">Grade-9</option>
+                                                                 <option value="Grade-10">Grade-10</option>
+                                                                 <option value="Grade-11">Grade-11</option>
+                                                                 <option value="Grade-12">Grade-12</option>
+                                                         </select>
+                                               
+                                               <h4>Marks Obtained</h4>
+                                        
+                                                        <label for="science">Science</label>
+                                                         <input type="number" id="science" class="science" placeholder="science" value=''>
+                                               
+                                        
+                                                        <label for="maths">Maths</label>
+                                                         <input type="number" id="maths" class="maths" placeholder="maths" value=''>
+                                               
+                                        
+                                                        <label for="english">English</label>
+                                                         <input type="number" id="english" class="english" placeholder="english" value=''>
+                                               
+                                        
+                                                        <label for="history">History</label>
+                                                         <input type="number" id="history" class="history" placeholder="history" value=''>
+                                               
+                                        
+                                                        <label for="geography">Geography</label>
+                                                         <input type="number" id="geography" class="geography" placeholder="geography" value=''>
+                                               
+
+                                            <div>
+                                                        <button id="student-add" class="btn btn-add btn-student-add" type="submit">Add</button>
+                                                        <!-- <button id="student-update" class="btn btn-update btn-student-update" type="submit">Update</button> -->
+                                            </div>
+
+                                        
+
+                                </div>
+                                <div class="grade-selection-container shadow flex-container">
+
+                                        <label for="grades">Select the Grade</label>
+                                        <select name="grades" id="grades">
+                                                <option value="all">All</option>
+                                               
+                                        </select>
+
+                                </div>
+
+                        </div>
+
+
+                </div>
+                <div class="right-container">
+                        <div class="table-container">
+                                <table class="table">
+                                                <thead class="thead-dark">
+                                                        <tr>
+                                                                <th scope="col">No.</th>
+                                                                <th scope="col">Name</th>
+                                                                <th scope="col">Grade</th>
+                                                                <th scope="col">Science</th>
+                                                                <th scope="col">Maths</th>
+                                                                <th scope="col">Eng</th>
+                                                                <th scope="col">History</th>
+                                                                <th scope="col">Geo</th>
+                                                                <th scope="col">Total</th>
+                                                                <th scope="col">Avg</th>
+                                                                <!-- <th scope="col">Edit</th> -->
+                                                        </tr>
+                                                 </thead>
+                                                <tbody id="student-table-body">
+                                                  
+                                                             
+                                                 </tbody>
+                                </table>
+                        </div>
+                </div>
+
+        </div>
+
+        <script src="./js/utils.js"></script>
+        <script src="./js/index.js"></script>
+</body>
+</html>
