@@ -109,7 +109,7 @@
                 <div>
                         <label for="bgColor">Background Color</label>
                         <input type="color" id="bgColor">
-                        <button onclick="backColor()" class="changeBack btn">Change Back</button>
+                        <button onclick="backColor()" value="#f18f18" class="changeBack btn">Change Back</button>
                 </div>
 
         </form>
@@ -150,6 +150,8 @@
                    product.value =''
                    price.value=''
                    quantity.value=''
+
+                   
             })
 
             function changeSize(){
@@ -163,8 +165,11 @@
             }
 
             function backColor(){
-                    const table = document.querySelector('table')    
-                    table.style.background =document.querySelector('#bgColor').value
+                    const allTrs = document.querySelectorAll('tr')
+                    allTrs.forEach(function(element,index){
+                            if(index %2 ===0 && index !== 0)
+                                element.style.background = document.querySelector('#bgColor').value
+                    })
             }
 
                
