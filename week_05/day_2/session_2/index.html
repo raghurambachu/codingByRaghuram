@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <title>Unix</title>
+        <style>
+
+                body{
+                        display: flex;
+                       justify-content: center;
+                       align-items: baseline;
+                }
+
+                #formAdd{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                }
+
+                input{
+                        display: block;
+                        padding: 0.5em;
+                        font-size: 1.125rem;
+                        border: 1px solid skyblue;
+                        margin-bottom: 0.75em;
+                        margin-top: 0.35em;
+                        text-align: center;
+                }
+
+                label{
+                        font-size: 1.125rem;
+                      
+                }
+
+               th{
+                        padding: 1.5em;
+                }
+
+                td{
+                        text-align: center;
+                }
+
+                .btn{
+                        border: none;
+                        background-color: #f18f18;
+                        font-weight: bold;
+                        padding: 0.8em 2.5em;
+                }
+
+                input[type='color']{
+                        padding: 1em 2.5em;
+                }
+
+                .container{
+                        padding: 2.5em;
+                }
+
+                
+        </style>
+    </head>
+    <body>
+       <!-- FORM to add -->
+       <div class="container">
+            <form id="formAdd" action="#">
+                    <div>
+                            <label for="product">Product Name</label>
+                            <input type="text" id="product" placeholder="name">
+                    </div>
+                    <div>
+                            <label for="price">Price</label>
+                            <input type="number" id="price" placeholder="amount">
+                    </div>
+                    <div>
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" placeholder="quantity">
+                    </div>
+                    <div>
+                            <button class="btn" id="add" type="submit">Add</button>
+                    </div>
+                    
+            </form>
+       </div>   
+       <!-- TABLE -->
+       <div class="container">
+            
+                <table>
+                        <thead>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                        </thead>
+                        <tbody id="tbody">
+                          
+                        </tbody>
+                </table>
+       </div>
+       <!-- SETTINGS -->
+       <div class="container">
+
+        <form action="#" id="formSettings">
+                <div class="first">
+                        <label for="fontSize">Font Size</label>
+                        <input type="number" id="fontSize" placeholder="font-size">
+                        <button onclick="changeSize()" class="changeSize btn">Change Size</button>
+                </div>
+                <div>
+                        <label for="fontColor">Font Color</label>
+                        <input type="color" id="fontColor">
+                        <button onclick="changeColor()" class="changeColor btn">Change Color</button>
+                </div>
+                <div>
+                        <label for="bgColor">Background Color</label>
+                        <input type="color" id="bgColor">
+                        <button onclick="backColor()" class="changeBack btn">Change Back</button>
+                </div>
+
+        </form>
+           
+       </div>
+
+
+       <script>
+               const allProducts = [];
+
+            const formAdd =   document.querySelector('#formAdd');
+            formAdd. addEventListener('submit',function(event){
+                    event.preventDefault();
+
+                    const product = document.querySelector('#product').value
+                    const price = document.querySelector('#price').value
+                    const quantity = document.querySelector('#quantity').value
+
+                    const prod = {
+                            product,
+                            price,
+                            quantity
+                    }
+                    allProducts.push(prod);
+
+                    const tableBody = document.querySelector('tbody')
+                    tableBody.innerHTML = '';
+                    allProducts.forEach(function(element){
+                    const row = document.createElement('tr')
+                    row.innerHTML += `
+                        <td>${element.product}</td>
+                        <td>${element.price}</td>
+                        <td>${element.quantity}</td>
+                    `
+                    tableBody.append(row);
+                    })
+                   
+                   product.value =''
+                   price.value=''
+                   quantity.value=''
+            })
+
+            function changeSize(){
+                    const table = document.querySelector('table')    
+                    table.style.fontSize = parseInt(document.querySelector('#fontSize').value)+'px';
+            }
+
+            function changeColor(){
+                    const table = document.querySelector('table')    
+                    table.style.color =document.querySelector('#fontColor').value
+            }
+
+            function backColor(){
+                    const table = document.querySelector('table')    
+                    table.style.background =document.querySelector('#bgColor').value
+            }
+
+               
+       </script>
+    </body>
+</html>
