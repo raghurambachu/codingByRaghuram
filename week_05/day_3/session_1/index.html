@@ -30,12 +30,12 @@
         <form class="col-sm-4 form-contain">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="text" class="form-control username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
+                  <input type="text" class="form-control username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="admin:raghuram , users: bachu , javascript">
                 
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password is 'something' for all of them">
                   <small class="pass-small pass">Incorrect Password</small>
                 </div>
 
@@ -44,12 +44,32 @@
       </div>
 
       <script>
-              
-              user ={
+
+              const validUsers =[
+              {
                       username:'raghuram',
-                      password:'something'
+                      password:'something',
+                      type:'admin'
+              },
+              {
+                      username:'bachu',
+                      password:'something',
+                      type:'user'
+              },
+              {
+                      username:'javascript',
+                      password:'something',
+                      type:'user'
               }
-              localStorage.setItem('user',JSON.stringify(user))
+              ]
+
+             
+             
+              //localStorage.setItem("loggedInUsers",JSON.stringify([]));
+              
+
+              localStorage.setItem('validUsers',JSON.stringify(validUsers))
+              //localStorage.setItem('user',JSON.stringify(user))
 
               const subBtn= document.querySelector('.form-contain');
               subBtn.addEventListener('submit',function(event){
@@ -57,34 +77,83 @@
                 username  = document.querySelector('.username').value;
                 password  =  document. querySelector('.password').value;
 
-                let userObj =  localStorage.getItem('user')
-                userObj = JSON.parse(userObj)
+                let userObj = JSON.parse(localStorage.getItem('validUsers'))
+                const users = userObj.filter(function(user){
+                        return user.username === username;
+                })
 
-                
-                
-               
-                if(userObj.username === username && userObj.password === password){
-                    
-                        const currentDate = new Date();
-                        const loginTimeH = currentDate.getHours()
-                        const loginTimeM = currentDate.getMinutes()
-                        const loginTimeS = currentDate.getSeconds()
-                        const logoutTimeH = loginTimeM  >= 55 ?  logininTimeH+1 : loginTimeH;
-                        const logoutTimeM = loginTimeM < 55 ? loginTimeM +5 :  loginTimeM%5
-                        const logoutTimeS = currentDate.getSeconds();
-                        localStorage.setItem('username',userObj.username)
-                        localStorage.setItem('loginTimeH',loginTimeH)
-                        localStorage.setItem('loginTimeM',loginTimeM)
-                        localStorage.setItem('loginTimeS',loginTimeS)
-                        localStorage.setItem('logoutTimeH',logoutTimeH)
-                        localStorage.setItem('logoutTimeM',logoutTimeM)
-                        localStorage.setItem('logoutTimeS',logoutTimeS)
+                if(users[0].username === username && users[0].password === password){
+                       
+                        if(users[0].type === 'user'){
 
+                                const logins = localStorage.getItem('loggedInUsers') ? JSON.parse(localStorage.getItem('loggedInUsers')) : []
+                        
+                                 const loggedInUser = logins.filter(function(login,index){  
+                                return login.username === username
+                        })
+                        
+                        
+                                const currentDate = new Date();
+                                const loginTimeH = currentDate.getHours()
+                                const loginTimeM = currentDate.getMinutes()
+                                const loginTimeS = currentDate.getSeconds()
+                                const logoutTimeH = loginTimeM  >= 55 ?  loginTimeH+1 : loginTimeH;
+                                const logoutTimeM = loginTimeM < 55 ? loginTimeM +5 :  loginTimeM%5
+                                const logoutTimeS = currentDate.getSeconds();
 
+                                const loginTime =`${loginTimeH}:${loginTimeM}:${loginTimeS}`;
+                                
+                                let  logInDetails;
+                                if(loggedInUser.length !== 0){
+                                        logInDetails = loggedInUser[0]
+                                        logInDetails.timeOfLogin = [... logInDetails.timeOfLogin,loginTime]
+                                }else{
+                                        logInDetails = {
+                                                username,
+                                                timeOfLogin: [loginTime]
+                                        }     
+                                }
+                                
+                                
+                                if(logins.length){
+                                        let pos; 
+                                        const userLogins = logins.map(function(login){
+                                        return login.username
+                                        })
+                                        console.log(userLogins)
+                                        
+                                        pos = userLogins.indexOf(username);
+                                        if(pos === -1)
+                                                logins.push(logInDetails)
+                                        else
+                                                logins[pos] = logInDetails;
+                                }        
+                                else{
+                                        logins.push(logInDetails)
+                                }
+                                
 
+                                localStorage.setItem('loggedInUsers',JSON.stringify(logins))
+                                
+                        
+                                localStorage.setItem('username',users[0].username)
+                                localStorage.setItem('loginTimeH',loginTimeH)
+                                localStorage.setItem('loginTimeM',loginTimeM)
+                                localStorage.setItem('loginTimeS',loginTimeS)
+                                localStorage.setItem('logoutTimeH',logoutTimeH)
+                                localStorage.setItem('logoutTimeM',logoutTimeM)
+                                localStorage.setItem('logoutTimeS',logoutTimeS)
 
-                        window.location.assign('./hash.html')
+                                window.location.assign('./hash.html')
 
+                        }else{
+                                //admin part
+                                localStorage.setItem('username',username)
+                                localStorage.setItem('type','admin')
+                                window.location.assign('./admin.html')
+                        }
+
+                       
                 }else{
                         if(userObj.password !== password){
                                 document.querySelector('.pass').classList.remove('pass-small');

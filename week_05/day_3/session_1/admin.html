@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admin</title>
+</head>
+<body>
+
+        <table>
+
+                <thead>
+                        <th>User</th>
+                        <th>Time of Login</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+
+        </table>
+
+
+        <button id="logout">Logout</button>
+
+
+
+
+
+
+        <script>
+
+                const username = localStorage.getItem('username');
+                const type = localStorage.getItem('type')
+        
+                if(!username || type !== 'admin' ){
+                        setDefault()
+                        window.location.assign('./index.html')
+                }
+        
+                if(type === 'admin'){
+        
+                        const allLoggedInUsers = JSON.parse(localStorage.getItem('loggedInUsers'));
+        
+                       const select =  document.createElement('select')
+                       select.innerHTML = '';
+                       select.innerHTML = `<option value="all">All</option>`;
+                       allLoggedInUsers.forEach(function(user) {
+                               select.innerHTML += `
+                                        <option value="${user.username}">${user.username}</option>
+                               `
+                       });
+        
+                       document.body.append(select);
+
+                       select.addEventListener('change',function(event){
+                               
+                               
+                              const value = event.srcElement.value;
+                              const user = allLoggedInUsers.filter(function(user){
+                                      return user.username === value
+                              })
+
+                              
+
+                              userLoginTime = user[0].timeOfLogin;
+
+                              const table = document.querySelector('table')
+                              
+                              
+                              let  tbody = document.querySelector('tbody')
+
+                              tbody.innerHTML = '';
+                              userLoginTime.forEach(function(loginTime,index){
+                                      if(index === 0){
+                                        tbody.innerHTML = `
+                                                <tr>
+                                                        <td>${value}</td>
+                                                        <td>${loginTime}</td>
+                                                </tr>
+                                        `;
+
+                                      }else{
+                                              tbody.innerHTML += `
+                                                 <tr>
+                                                        <td></td>
+                                                        <td>${loginTime}</td>
+                                                 </tr>
+                                              `
+                                      }
+                                      
+                              })
+
+                              
+                              table.append(tbody)
+                              
+
+                       })
+
+        
+        
+        
+                }
+        
+                function setDefault(){
+                        localStorage.setItem('username','')
+                        localStorage.setItem('type','')
+                }
+
+
+                const button = document.querySelector('#logout')
+                button.style.padding = '1em'
+                button.addEventListener('click',function(){
+
+                        setDefault();
+                        window.location.assign('./index.html')
+                })
+        
+        
+        </script>
+        
+</body>
+
+</html>
