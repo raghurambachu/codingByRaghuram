@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hash</title>
+</head>
+<body>
+        
+
+        <script>
+
+                const username = localStorage.getItem('username')
+                if(!username){
+
+                       setToDefault()
+
+                        window.location.assign('./index.html')
+
+                }else{
+
+                        loginTimeH = localStorage.getItem('loginTimeH')
+                        loginTimeM = localStorage.getItem('loginTimeM')
+                        loginTimeS =  localStorage.getItem('loginTimeS')
+                        logoutTimeH =  localStorage.getItem('logoutTimeH')
+                        logoutTimeM =  localStorage.getItem('logoutTimeM')
+                        logoutTimeS =  localStorage.getItem('logoutTimeS')
+                        const body = document.body;
+
+                        const header = document.createElement('h1')
+                        const paraLogin = document.createElement('p')
+                        const paraEnd = document.createElement('p')
+                        const logoutBtn = document.createElement('button')
+
+                        header.innerText = `Welcome ${username}`;
+                        paraLogin.innerText = `You have logged in at :  ${loginTimeH}:${loginTimeM}:${loginTimeS}`
+                        paraEnd.innerText = ` You will be logged out by : ${logoutTimeH}:${logoutTimeM}:${logoutTimeS} `
+                        logoutBtn.innerText = 'logout'
+                        logoutBtn.style.padding ='2em';
+
+                        body.append(header)
+                        body.append(paraLogin)
+                        body.append(paraEnd)
+                        body.append(logoutBtn)
+
+                        addEventListenerToLogout(logoutBtn);
+                        tracktime()
+
+                }
+
+                function addEventListenerToLogout(logoutBtn){
+                        logoutBtn.addEventListener('click',function(){
+                                setToDefault();
+                                window.location.assign('./index.html');
+                        })
+                }
+
+                function setToDefault(){
+                        localStorage.setItem('username','')
+                        localStorage.setItem('loginTimeH','')
+                        localStorage.setItem('loginTimeM','')
+                        localStorage.setItem('loginTimeS','')
+                        localStorage.setItem('logoutTimeH','')
+                        localStorage.setItem('logoutTimeM','')
+                        localStorage.setItem('logoutTimeS','')
+                }
+
+                function tracktime(){
+                        window.onload= setTimeout(function(){
+                                setToDefault()
+                                window.location.assign('./index.html')
+                        },300000)
+                }
+        </script>
+</body>
+</html>
